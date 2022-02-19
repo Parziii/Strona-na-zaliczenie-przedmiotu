@@ -2,6 +2,7 @@
     ViewData["Title"] = "Contact";
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
+@model ClientModel
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
 
@@ -22,7 +23,7 @@
 
         <div class="section-title">
             <h2>Skontaktuj sie znami </h2>
-            <p>Nie warto tracić czasu. Swiat nie znosi próżnij. Skontaktuj się z nami a my zabierzemy cię do świata w któym pomoc drugiemu człowiekowi na 1 miesjcu </p>
+            <p>Nie warto tracić czasu. Swiat nie znosi próżni. Skontaktuj się z nami a my zabierzemy cię do świata w któym pomoc drugiemu człowiekowi na 1 miesjcu </p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -56,22 +57,26 @@
             </div>
 
             <div class="col-lg-6">
-                <form method="POST" role="form" asp-action="Add">
+                <form method="POST" asp-action="Add">
                     <div class="row">
                         <div class="col form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Twoje imie" required>
+                            <label asp-for="Name">Item name</label>
+                            <input asp-for="Name" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Twój Email" required>
+                            <label asp-for="Mail">Description</label>
+                            <input asp-for="Mail" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Temat" required>
+                        <label asp-for="Topic">Description</label>
+                        <input asp-for="Topic" class="form-control" />
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" name="message" rows="5" placeholder="Wiadomość" required></textarea>
+                        <label asp-for="Description">Description</label>
+                        <input asp-for="Description" class="form-control" />
                     </div>
-                    <div class="text-center"><button type="submit">Wyślij wiadomość</button></div>
+                    <div class="text-center form-group m-md-auto"><input type="submit" value="Add new item" /></div>
                 </form>
             </div>
 
