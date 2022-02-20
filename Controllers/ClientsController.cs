@@ -12,12 +12,12 @@ namespace Strona.Controllers
 {
     public class ClientsController : Controller
     {
-        private readonly AppDbContext _dbContext;
+        
         private readonly IClientService _clientService;
 
-        public ClientsController(AppDbContext dbContext, IClientService clientService)
+        public ClientsController(IClientService clientService)
         {
-            _dbContext = dbContext;
+            
             _clientService = clientService;
         }
 

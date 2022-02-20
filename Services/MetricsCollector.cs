@@ -9,7 +9,7 @@ namespace Strona.Services
 
     public class MetricsCollector : IMetricsCollector
     {
-        private readonly List<CollectedRequestModel> _collected = new List<CollectedRequestModel>();
+        private readonly List<CollectedRequestModel> _collected = new();
 
 
         public void Collect(string httpMethod, string path, int responseCode)
@@ -26,7 +26,15 @@ namespace Strona.Services
 
         public IEnumerable<EndpointStats> GetEndpointStats()
         {
-            throw new NotImplementedException();
+            var requestedGrouped = _collected.GroupBy(x => new { x.HttpMethod, x.RequestUrl });
+            var requestedCounted = requestedGrouped.Select(x => new EndpointStats
+            {
+                HttpMethod = x.Key.HttpMethod,
+                RequestUrl = x.Key.RequestUrl,
+                RequestsCount = x.Count()
+            });
+
+            return requestedCounted;
         }
     }
 

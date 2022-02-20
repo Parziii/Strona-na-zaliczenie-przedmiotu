@@ -7,7 +7,7 @@ namespace Strona.Services
 {
     public interface IMetricsCollector
     {
-        public void Collect(string httpMethod, string path, int response);
+        void Collect(string httpMethod, string path, int responseCode);
 
         IEnumerable<EndpointStats> GetEndpointStats();
     }

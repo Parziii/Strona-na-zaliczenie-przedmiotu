@@ -32,6 +32,7 @@ namespace Strona
             services.AddDbContext<AppDbContext>(config => config.UseSqlServer(Configuration.GetConnectionString("Application")));
 
             services.AddTransient<IClientService, ClientService>();
+            services.AddSingleton<IMetricsCollector, MetricsCollector>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
