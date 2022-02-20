@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Strona.Services.EndpointStats>
+    <section id="about" class="about section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row no-gutters">
+                <div class="content col-xl-5 d-flex align-items-stretch">
+                    <div class="content">
+                        <h2>Application metrics</h2>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>HTTP method</th>
+                                    <th>Path</th>
+                                    <th>Request count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var stats in Model)
+                                {
+                                    <tr>
+                                        <td>@stats.HttpMethod</td>
+                                        <td>@stats.RequestUrl</td>
+                                        <td>@stats.RequestsCount</td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                       
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>

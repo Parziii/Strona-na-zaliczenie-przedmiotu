@@ -2,6 +2,7 @@
 using Strona.Database;
 using Strona.Entities;
 using Strona.Models;
+using Strona.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,13 @@ namespace Strona.Controllers
 {
     public class ClientsController : Controller
     {
-        private readonly AppDbContext _dbContext;
+        
+        private readonly IClientService _clientService;
 
-        public ClientsController(AppDbContext dbContext)
+        public ClientsController(IClientService clientService)
         {
-            _dbContext = dbContext;
+            
+            _clientService = clientService;
         }
 
         public IActionResult Index()
@@ -26,17 +29,7 @@ namespace Strona.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(ClientModel client)
         {
-            var entity = new ClientEntity
-            {
-                Name = client.Name,
-                Mail = client.Mail,
-                Topic = client.Topic,
-                Description = client.Description
-            };
-
-            await _dbContext.Clients.AddAsync(entity);
-
-            await _dbContext.SaveChangesAsync();
+            await _clientService.Add(client);
 
             return View();
         }
