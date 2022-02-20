@@ -24,6 +24,10 @@ namespace Strona.Controllers
         {
             return View();
         }
+        public IActionResult admin()
+        {
+            return View();
+        }
 
         public IActionResult Contact()
         {
