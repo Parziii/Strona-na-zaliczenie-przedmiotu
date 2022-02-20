@@ -60,23 +60,28 @@
                 <form method="POST" asp-action="Add">
                     <div class="row">
                         <div class="col form-group">
-                            <label asp-for="Name">Item name</label>
-                            <input asp-for="Name" class="form-control" />
+                            
+                            <input asp-for="Name" class="form-control" placeholder="Imie" />
                         </div>
+                        <br />
                         <div class="col form-group">
-                            <label asp-for="Mail">Description</label>
-                            <input asp-for="Mail" class="form-control" />
+                            
+                            <input asp-for="Mail" class="form-control" placeholder="Nazwisko" />
                         </div>
+                        <br />
                     </div>
+                    <br />
                     <div class="form-group">
-                        <label asp-for="Topic">Description</label>
-                        <input asp-for="Topic" class="form-control" />
+                       
+                        <input asp-for="Topic" class="form-control" placeholder="Opis problemu " />
                     </div>
+                    <br/>
                     <div class="form-group">
-                        <label asp-for="Description">Description</label>
-                        <input asp-for="Description" class="form-control" />
+                       
+                        <input asp-for="Description" class="form-control" placeholder="Opis Alternatynwy" />
                     </div>
-                    <div class="text-center form-group m-md-auto"><input type="submit" value="Add new item" /></div>
+                    <br />
+                    <div><center><input type="submit" class="btn btn-danger " value="Add new item"</center> </div>
                 </form>
             </div>
 
