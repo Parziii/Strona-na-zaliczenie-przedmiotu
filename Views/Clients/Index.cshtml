@@ -11,17 +11,17 @@
             <div class="col-xl-6">
                 <h1>Dotacje Unijne na rok 2022</h1>
                 <h2>Prowadzimy zapisy na dotacje Unijne z rożnych gatunków życia</h2>
-                <a class="btn-get-started scrollto" href="#zapisz">Zapisz się </a>
+                <a href="#about" class="btn-get-started scrollto">Zapisz się </a>
             </div>
         </div>
     </div>
 
 </section><!-- End Hero -->
 <!-- ======= Contact Section ======= -->
-<section id="zapisz" class="contact">
+<section id="contact" class="contact">
     <div class="container" data-aos="fade-up">
 
-        <div id="zapisz" class="section-title">
+        <div class="section-title">
             <h2>Skontaktuj sie znami </h2>
             <p>Nie warto tracić czasu. Swiat nie znosi próżni. Skontaktuj się z nami a my zabierzemy cię do świata w któym pomoc drugiemu człowiekowi na 1 miesjcu </p>
         </div>
@@ -41,15 +41,15 @@
                     <div class="col-md-6">
                         <div class="info-box mt-4">
                             <i class="bx bx-envelope"></i>
-                            <h3>Email</h3>
-                            <p>dotacje_unijne@gmail.com</p>
+                            <h3>Email do nas</h3>
+                            <p>dotacje_unijne@gmail.com<br>dotacje_unijne2@gmail.com</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="info-box mt-4">
                             <i class="bx bx-phone-call"></i>
-                            <h3>Numer telefonu</h3>
-                            <p>+123456789</p>
+                            <h3>Zadzwoń do nas</h3>
+                            <p>+123456789<br>987654321</p>
                         </div>
                     </div>
                 </div>
@@ -60,28 +60,23 @@
                 <form method="POST" asp-action="Add">
                     <div class="row">
                         <div class="col form-group">
-                            
-                            <input asp-for="Name" class="form-control" placeholder="Imie" />
+                            <label asp-for="Name">Item name</label>
+                            <input asp-for="Name" class="form-control" />
                         </div>
-                        <br />
                         <div class="col form-group">
-                            
-                            <input asp-for="Mail" class="form-control" placeholder="Nazwisko" />
+                            <label asp-for="Mail">Description</label>
+                            <input asp-for="Mail" class="form-control" />
                         </div>
-                        <br />
                     </div>
-                    <br />
                     <div class="form-group">
-                       
-                        <input asp-for="Topic" class="form-control" placeholder="Opis problemu " />
+                        <label asp-for="Topic">Description</label>
+                        <input asp-for="Topic" class="form-control" />
                     </div>
-                    <br/>
                     <div class="form-group">
-                       
-                        <input asp-for="Description" class="form-control" placeholder="Opis Alternatynwy" />
+                        <label asp-for="Description">Description</label>
+                        <input asp-for="Description" class="form-control" />
                     </div>
-                    <br />
-                    <div><center><input type="submit" class="btn btn-danger " value="Add new item"</center> </div>
+                    <div class="text-center form-group"><input type="submit" value="Add new item" /></div>
                 </form>
             </div>
 
