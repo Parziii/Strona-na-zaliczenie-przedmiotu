@@ -1,4 +1,6 @@
-﻿using Strona.Database;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Strona.Database;
 using Strona.Entities;
 using Strona.Models;
 using System;
@@ -31,6 +33,20 @@ namespace Strona.Services
 
             await _dbContext.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<ClientEntity>> GetAllClients(string name)
+        {
+            IQueryable<ClientEntity> clientQuery = _dbContext.Clients;
+
+            if (!string.IsNullOrEmpty(name))
+            {
+                clientQuery = clientQuery.Where(x => x.Name.Contains(name));
+            }
+
+            var clients = await clientQuery.ToListAsync();
+            return clients;
+        }
+
 
     }
 }

@@ -33,5 +33,12 @@ namespace Strona.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> List(string name)
+        {
+            var clients = await _clientService.GetAllClients(name);
+            return View(clients);
+        }
     }
 }

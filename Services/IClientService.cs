@@ -1,4 +1,5 @@
-﻿using Strona.Models;
+﻿using Strona.Entities;
+using Strona.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Strona.Services
     public interface IClientService
     {
         Task Add(ClientModel client);
-
+        Task<IEnumerable<ClientEntity>> GetAllClients(string name);
     }
 }
