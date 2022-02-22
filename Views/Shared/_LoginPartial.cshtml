@@ -4,11 +4,11 @@
         @if (SignInManager.IsSignedIn(User))
         {
         <li class="nav-item">
-            <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index">@User.Identity.Name</a>
+            <a class="btn btn-outline-primary me-2" asp-area="Identity" asp-page="/Account/Manage/Index">@User.Identity.Name</a>
         </li>
         <li class="nav-item">
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout">
-                <button type="submit" class="btn btn-primary btn-sm">Wyloguj</button>
+                <button type="submit" class="btn btn-primary me-2">Wyloguj</button>
             </form>
         </li>
         }
@@ -18,6 +18,6 @@
             <a class="btn btn-outline-primary me-2 " asp-area="Identity"  asp-page="/Account/Login">Logowanie</a>
         </li>
         <li class="nav-item">
-            <a class="btn btn-primary me-2 padding" asp-area="Identity" asp-page="/Account/Register">Rejestracja</a>
+            <a class="btn btn-primary me-2" asp-area="Identity" asp-page="/Account/Register">Rejestracja</a>
         </li>
         }
