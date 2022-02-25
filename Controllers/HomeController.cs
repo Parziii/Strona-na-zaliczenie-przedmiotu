@@ -24,6 +24,7 @@ namespace Strona.Controllers
         {
             return View();
         }
+
         public IActionResult AdminLogin()
         {
             return View();

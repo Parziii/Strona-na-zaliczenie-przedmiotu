@@ -33,7 +33,16 @@ namespace Strona.Services
 
             await _dbContext.SaveChangesAsync();
         }
+/*
+        public Task AddAdmin()
+        {
+            if (_dbContext.)
+            {
 
+            }
+
+        }
+*/
         public async Task<IEnumerable<ClientEntity>> GetAllClients(string name)
         {
             IQueryable<ClientEntity> clientQuery = _dbContext.Clients;

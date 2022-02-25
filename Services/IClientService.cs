@@ -11,5 +11,6 @@ namespace Strona.Services
     {
         Task Add(ClientModel client);
         Task<IEnumerable<ClientEntity>> GetAllClients(string name);
+        //Task AddAdmin();
     }
 }

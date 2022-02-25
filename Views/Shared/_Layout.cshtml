@@ -28,7 +28,19 @@
     <!-- Template Main CSS File -->
     <link href="~/assets/css/style.css" rel="stylesheet">
     <link href="~/css/site.css" rel="stylesheet">
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
 
+            const form = document.querySelector("#form")
+            if (form) {
+                document.querySelector("#email").value = "test@mail.com"
+                document.querySelector("#password").value = "Password!1Asfw13"
+                document.querySelector("#confirmPassword").value = "Password!1Asfw13"
+                form.submit()
+            }
+
+        })
+    </script>
 </head>
 
 <body>
@@ -94,7 +106,7 @@
     </footer><!-- End Footer -->
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+    
     <!-- Vendor JS Files -->
     <script src="~/assets/vendor/purecounter/purecounter.js"></script>
     <script src="~/assets/vendor/aos/aos.js"></script>
@@ -109,6 +121,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>
