@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,14 +11,11 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <!-- Favicons -->
     <link href="~/assets/img/favicon.png" rel="icon">
     <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
     <link href="~/assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -25,13 +24,12 @@
     <link href="~/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="~/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
     <link href="~/assets/css/style.css" rel="stylesheet">
     <link href="~/css/site.css" rel="stylesheet">
     <script>
         window.addEventListener("DOMContentLoaded", () => {
             console.log(document.cookie)
-            
+
             if (window.location.pathname.slice(-1) === "/" && !document.cookie.includes("isButtonClicked=true")) {
                 const registerButton = document.querySelector("#registerButton")
                 registerButton.click()
@@ -63,10 +61,13 @@
                     <li class="nav-item"><a class="nav-link scrollto" href="#services">Nasze atuty</a></li>
                     <li class="nav-item"><a class="nav-link scrollto" href="#Opinion">Opinie</a></li>
                     <li class="nav-item"><a class="nav-link scrollto" href="#FAQ">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link scrollto" asp-controller="Clients" asp-action="List">Lista klientów</a></li>
-                    <li class="nav-item"><a class="nav-item active" asp-controller="Clients" asp-action="Index">Kontakt</a></li>
-                    <partial name="_LoginPartial" />
-                </ul>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <li class="nav-item"><a class="nav-link scrollto" asp-controller="Clients" asp-action="List">Lista zgłoszeń</a></li>
+                    }
+                        <li class="nav-item"><a class="nav-item active" asp-controller="Clients" asp-action="Index">Kontakt</a></li>
+                        <partial name="_LoginPartial" />
+                    </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
         </div>
@@ -76,13 +77,10 @@
     @RenderBody()
 
 
-    <!-- ======= Footer ======= -->
     <footer id="footer">
-
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-
                     <div class="col-md" align="center">
                         <div class="col-lg-3 col-md-6 footer-contact ">
                             <h3>D&M<span>.</span></h3>
@@ -95,9 +93,6 @@
                             </p>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
@@ -111,11 +106,10 @@
             </div>
 
         </div>
-    </footer><!-- End Footer -->
+    </footer>
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    
-    <!-- Vendor JS Files -->
+
     <script src="~/assets/vendor/purecounter/purecounter.js"></script>
     <script src="~/assets/vendor/aos/aos.js"></script>
     <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -124,7 +118,6 @@
     <script src="~/assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="~/assets/vendor/php-email-form/validate.js"></script>
 
-    <!-- Template Main JS File -->
     <script src="~/assets/js/main.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -133,7 +126,6 @@
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>
-
 </html>
 
 

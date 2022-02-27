@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Strona.Database;
 using Strona.Entities;
 using Strona.Models;
@@ -33,7 +34,7 @@ namespace Strona.Controllers
 
             return View();
         }
-
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> List(string name)
         {

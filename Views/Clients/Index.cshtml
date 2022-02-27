@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_LayoutHeaderNonEx.cshtml";
 }
 @model ClientModel
-<!-- ======= Hero Section ======= -->
+
 <section id="hero" class="d-flex align-items-center">
 
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
@@ -16,20 +16,16 @@
         </div>
     </div>
 
-</section><!-- End Hero -->
-<!-- ======= Contact Section ======= -->
+</section>
+
 <section id="zapisz" class="contact">
     <div class="container" data-aos="fade-up">
-
         <div id="zapisz" class="section-title">
-            <h2>Skontaktuj sie znami </h2>
-            <p>Nie warto tracić czasu. Swiat nie znosi próżni. Skontaktuj się z nami a my zabierzemy cię do świata w któym pomoc drugiemu człowiekowi na 1 miesjcu </p>
+            <h2>Skontaktuj sie z nami </h2>
+            <p>Nie warto tracić czasu. Świat nie znosi próżni. Skontaktuj się z nami, a my zabierzemy cię do świata w którym pomoc drugiemu człowiekowi stoi na pierwszym miejscu.</p>
         </div>
-
         <div class="row" data-aos="fade-up" data-aos-delay="100">
-
             <div class="col-lg-6">
-
                 <div class="row">
                     <div class="col-md-12">
                         <div class="info-box">
@@ -53,39 +49,32 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div class="col-lg-6">
                 <form method="POST" asp-action="Add">
                     <div class="row">
                         <div class="col form-group">
-                            
-                            <input asp-for="Name" class="form-control" placeholder="Imie i nazwisko" />
+                            <input asp-for="Name" class="form-control" placeholder="Imię i nazwisko" />
                         </div>
                         <br />
                         <div class="col form-group">
-                            
-                            <input asp-for="Mail" class="form-control" placeholder=" mail " />
+                            <input asp-for="Mail" class="form-control" placeholder="Mail" />
                         </div>
                         <br />
                     </div>
                     <br />
                     <div class="form-group">
-                       
-                        <input asp-for="Topic" class="form-control" placeholder="temat problemu  " />
+                        <input asp-for="Topic" class="form-control" placeholder="Temat problemu" />
                     </div>
                     <br/>
                     <div class="form-group">
-                       
                         <textarea asp-for="Description" class="form-control" placeholder="Opis problemu"></textarea>
                     </div>
                     <br />
-                    <div><center><input type="submit" class="btn btn-danger " value="Add new item" /></center> </div>
+                    <div><center><input type="submit" class="btn btn-danger " value="Dodaj zgłoszenie!" /></center> </div>
                 </form>
             </div>
-
         </div>
-
     </div>
-</section><!-- End Contact Section -->
+</section>
